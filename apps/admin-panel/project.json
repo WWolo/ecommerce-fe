@@ -20,7 +20,12 @@
           "apps/admin-panel/src/favicon.ico",
           "apps/admin-panel/src/assets"
         ],
-        "styles": ["apps/admin-panel/src/styles.scss"],
+        "styles": [
+          "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+          "node_modules/primeng/resources/primeng.min.css",
+          "node_modules/primeflex/primeflex.css",
+          "apps/admin-panel/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {

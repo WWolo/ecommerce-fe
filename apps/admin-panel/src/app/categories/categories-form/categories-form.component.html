@@ -1,0 +1,57 @@
+<div class="admin-page">
+  <p-card header="Categories" subheader="List of all categories">
+    <div class="grid mb-4">
+      <div class="col-12">
+        <p-toolbar>
+          <div class="p-toolbar-group-left"></div>
+
+          <div class="p-toolbar-group-right gap-3">
+            <p-button
+              label="Create"
+              icon="pi pi-plus"
+              [rounded]="true"
+              (onClick)="onSubmit()"
+            ></p-button>
+            <p-button
+              styleClass="p-button-secondary"
+              label="Cancel"
+              icon="pi pi-arrow-circle-left"
+              [routerLink]="'../'"
+              [rounded]="true"
+            ></p-button>
+          </div>
+        </p-toolbar>
+      </div>
+    </div>
+    <form [formGroup]="form">
+      <div class="formgrid grid">
+        <div class="field col">
+          <label for="name">Name</label>
+          <input
+            id="name"
+            pInputText
+            type="text"
+            class="w-full"
+            formControlName="name"
+          />
+          <small
+            *ngIf="form.controls['name'].invalid && isSubmitted"
+            id="name-help"
+            class="p-error"
+            >Name is required</small
+          >
+        </div>
+        <div class="field col">
+          <label for="icon">Icon</label>
+          <input
+            id="icon"
+            pInputText
+            type="text"
+            class="w-full"
+            formControlName="icon"
+          />
+        </div>
+      </div>
+    </form>
+  </p-card>
+</div>

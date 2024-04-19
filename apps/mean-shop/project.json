@@ -20,7 +20,12 @@
           "apps/mean-shop/src/favicon.ico",
           "apps/mean-shop/src/assets"
         ],
-        "styles": ["apps/mean-shop/src/styles.scss"],
+        "styles": [
+          "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+          "node_modules/primeng/resources/primeng.min.css",
+          "node_modules/primeflex/primeflex.css",
+          "apps/mean-shop/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
