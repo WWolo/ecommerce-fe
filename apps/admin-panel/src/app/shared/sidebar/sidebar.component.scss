@@ -2,6 +2,7 @@
   position: fixed;
   width: 175px;
   background-color: var(--gray-700);
+  background-color: #18181b;
 
   height: 100%;
 
@@ -31,7 +32,7 @@
           width: 100%;
 
           &:hover {
-            background-color: var(--blue-700);
+            background-color: var(--gray-800);
           }
 
           i {

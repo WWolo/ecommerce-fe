@@ -1,5 +1,5 @@
-import { Component } from '@angular/core'
-import { CORE_IMPORTS } from '@org/ui'
+import { Component } from '@angular/core';
+import { CORE_IMPORTS } from '@org/ui';
 
 @Component({
   selector: 'admin-sidebar',
