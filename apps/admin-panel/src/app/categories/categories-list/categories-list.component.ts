@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { CategoriesService, Category } from '@org/products';
 import { CORE_IMPORTS, PRIME_UI } from '@org/ui';
 import { ConfirmationService, MessageService } from 'primeng/api';
@@ -19,6 +20,7 @@ import { Observable, of, switchMap, tap } from 'rxjs';
   styleUrl: './categories-list.component.scss',
 })
 export class CategoriesListComponent {
+  private readonly router = inject(Router);
   private readonly messageService = inject(MessageService);
   private readonly categoryService = inject(CategoriesService);
   private readonly confirmationService = inject(ConfirmationService);
@@ -61,6 +63,6 @@ export class CategoriesListComponent {
   }
 
   editCategory(id: string) {
-    return;
+    this.router.navigateByUrl(`categories/form/${id}`);
   }
 }
