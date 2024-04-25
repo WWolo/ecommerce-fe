@@ -1,5 +1,6 @@
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { InputTextModule } from 'primeng/inputtext';
 import { TableModule } from 'primeng/table';
@@ -14,4 +15,5 @@ export const PRIME_UI = [
   InputTextModule,
   FloatLabelModule,
   ToastModule,
+  ConfirmDialogModule,
 ];
