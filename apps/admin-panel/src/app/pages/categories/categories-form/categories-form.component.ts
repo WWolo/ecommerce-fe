@@ -30,6 +30,7 @@ export class CategoriesFormComponent implements OnInit {
     this.form = this.fb.group({
       name: ['', Validators.required],
       icon: ['', Validators.required],
+      color: ['#fff', Validators.required],
     });
   }
 
@@ -42,6 +43,7 @@ export class CategoriesFormComponent implements OnInit {
     const category: Omit<Category, 'id'> = {
       name: this.form.controls['name'].value,
       icon: this.form.controls['icon'].value,
+      color: this.form.controls['color'].value,
     };
 
     if (this.editMode()) {
@@ -64,6 +66,8 @@ export class CategoriesFormComponent implements OnInit {
           summary: 'Success',
           detail: 'Category was successfully created',
         });
+
+        this.cancel();
       },
       error: () =>
         this.messageService.add({
@@ -75,13 +79,16 @@ export class CategoriesFormComponent implements OnInit {
   }
 
   private updateCategory(category: Category) {
-    this.categoryService.updateCategory(category, this.categoryId!).subscribe({
+    if (!this.categoryId) return;
+    this.categoryService.updateCategory(category, this.categoryId).subscribe({
       complete: () => {
         this.messageService.add({
           severity: 'success',
           summary: 'Success',
           detail: 'Category was successfully updated',
         });
+
+        this.cancel();
       },
       error: () =>
         this.messageService.add({
